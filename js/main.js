@@ -1,24 +1,24 @@
 (function() {
 
     (function(){
-        
+
         $("#toggle_nav").click(function(){
             $(".navigation > ul").slideToggle("normal");
         });
 
         $(window).resize(function(){
-            
+
             if($(window).width() > 740){
                 $(".navigation > ul").css("display", "flex");
             }else{
                 $(".navigation > ul").css("display", "none");
             }
         });
-        
+
     })();
-    
+
     (function(){
-        
+
         $(".navigation > ul > li > a").each(function(){
             $(this).click(function(e){
                 e.preventDefault();
@@ -64,7 +64,22 @@
         });
 
     })();
-    
 
-    
+    //handle video playing
+    (function(){
+
+        $(".container_5 > video").click(function(){
+            $("#title_for_tideo").css("zIndex", "1");
+        });
+
+        $(".container_5 > video").on('ended', function(){
+            $("#title_for_tideo").css("zIndex", "200");
+        });
+
+    })();
+
+
+
+
+
 })();
